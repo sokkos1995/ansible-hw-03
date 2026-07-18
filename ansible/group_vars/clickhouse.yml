@@ -1,9 +1,20 @@
 ---
+# Version for AlexeySetevoi.clickhouse role
 clickhouse_version: "22.3.3.44"
-clickhouse_packages:
-  - name: clickhouse-common-static
-    arch: amd64
-  - name: clickhouse-client
-    arch: all
-  - name: clickhouse-server
-    arch: all
+
+# "::" accepts both IPv4 and IPv6 from everywhere.
+# Do NOT add 0.0.0.0 together with "::" — port bind fails ("Address already in use").
+clickhouse_listen_host:
+  - "::"
+
+clickhouse_http_port: 8123
+clickhouse_tcp_port: 9000
+
+# Allow remote clients (Vector / Lighthouse) to connect as default user
+clickhouse_networks_default:
+  - "::/0"
+  - "0.0.0.0/0"
+
+# Create database used by Vector sink
+clickhouse_dbs_custom:
+  - { name: logs }
