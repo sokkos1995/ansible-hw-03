@@ -38,7 +38,7 @@ roles/
 | `clickhouse_listen_host` | `["::", "0.0.0.0"]` | Listen addresses |
 | `clickhouse_dbs_custom` | `[{ name: logs }]` | Создание БД |
 
-### vector (`main` → лучше зафиксировать тегом `1.0.0`)
+### vector (`1.0.0`)
 
 | Variable | Default | Description |
 |----------|---------|-------------|
@@ -50,7 +50,7 @@ roles/
 
 Подробнее: https://github.com/sokkos1995/vector-role
 
-### lighthouse (`main` → лучше зафиксировать тегом `1.0.0`)
+### lighthouse (`1.0.0`)
 
 | Variable | Default | Description |
 |----------|---------|-------------|
